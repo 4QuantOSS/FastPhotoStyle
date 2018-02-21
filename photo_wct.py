@@ -9,6 +9,14 @@ from torch.utils.serialization import load_lua
 import numpy as np
 import cv2
 
+try:
+  torch.cuda.current_device()
+  TORCH_MODE = 'GPU'
+  get_dev_vec = lambda x: x.cuda(0)
+except AssertionError:
+  TORCH_MODE = 'CPU'
+  get_dev_vec = lambda x: x.cpu()
+
 class PhotoWCT(nn.Module):
   def __init__(self, args):
     super(PhotoWCT, self).__init__()
@@ -131,8 +139,8 @@ class PhotoWCT(nn.Module):
       styl_mask = np.where(t_styl_seg.reshape(t_styl_seg.shape[0] * t_styl_seg.shape[1]) == l)
       if cont_mask[0].size <= 0 or styl_mask[0].size <= 0 :
         continue
-      cont_indi = torch.LongTensor(cont_mask[0]).cuda(0)
-      styl_indi = torch.LongTensor(styl_mask[0]).cuda(0)
+      cont_indi = get_dev_vec(torch.LongTensor(cont_mask[0]))
+      styl_indi = get_dev_vec(torch.LongTensor(styl_mask[0]))
       cFFG = torch.index_select(cont_feat_view, 1, cont_indi)
       sFFG = torch.index_select(styl_feat_view, 1, styl_indi)
       tmp_target_feature = self.__wct_core(cFFG, sFFG)
@@ -148,7 +156,7 @@ class PhotoWCT(nn.Module):
     c_mean = c_mean.unsqueeze(1).expand_as(cont_feat)
     cont_feat = cont_feat - c_mean
 
-    iden = torch.eye(cFSize[0]).cuda()#.double()
+    iden = get_dev_vec(torch.eye(cFSize[0]))#.double()
     contentConv = torch.mm(cont_feat, cont_feat.t()).div(cFSize[1] - 1) + iden
     # del iden
     c_u, c_e, c_v = torch.svd(contentConv, some=False)
