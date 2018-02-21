@@ -1,6 +1,13 @@
 ## FastPhotoStyle
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master)
+### Binder Support
+Here are a few links to make using binder easier
+- Full Binder [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master)
+
+- Demo App [![Demo App](https://cdn.rawgit.com/ivanvotti/font-awesome-svg/c995f5db/SVG/rocket.svg)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master?urlpath=%2Fapps%2Fnotebooks%2Fdemo_app.ipynb)
+
+- Demo Notebook [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master?urlpath=notebooks/demo.ipynb)
+
 
 ### License
 Copyright (C) 2018 NVIDIA Corporation.  All rights reserved.
