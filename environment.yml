@@ -1,0 +1,22 @@
+name: fastphoto
+channels:
+  - menpo
+  - glemaitre
+  - soumith
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - python=2.7
+  - numpy
+  - matplotlib
+  - pandas
+  - h5py
+  - pytorch<=0.3.0
+  - torchvision
+  - opencv3>=3.1.0
+  - graphviz=2.38.0=4
+  - pip:
+    - scikit-umfpack
+    - cupy
+    - pynvrtc
