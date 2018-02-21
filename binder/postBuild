@@ -1,3 +1,2 @@
-#!/bin/bash
 curl -L "https://www.dropbox.com/s/dlmpr7wabehq3x0/models.zip?dl=1" > models.zip
 unzip models.zip
