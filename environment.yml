@@ -18,5 +18,4 @@ dependencies:
   - graphviz=2.38.0=4
   - pip:
     - scikit-umfpack
-    - cupy
     - pynvrtc
