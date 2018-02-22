@@ -5,7 +5,7 @@ Here are a few links to make using binder easier
 
 - Full Binder [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master)
 
-- Demo Notebook [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master?urlpath=notebooks/demo.ipynb)
+- Demo Notebook [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master?filepath=notebooks/demo.ipynb)
 
 - Demo App [![Demo App](images/badges/app.png)](https://mybinder.org/v2/gh/4QuantOSS/FastPhotoStyle/master?urlpath=%2Fapps%2Fnotebooks%2Fdemo_app.ipynb)
 
